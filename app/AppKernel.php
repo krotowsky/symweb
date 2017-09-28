@@ -19,13 +19,10 @@ class AppKernel extends Kernel
 
             //Sonata Admin Bundle
             new Sonata\AdminBundle\SonataAdminBundle(),
-
-//            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
-
-            // These are the other bundles the SonataAdminBundle relies on
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 
         );
 
