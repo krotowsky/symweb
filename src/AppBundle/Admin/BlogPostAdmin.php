@@ -29,16 +29,21 @@ class BlogPostAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper){
         $listMapper
-            ->add('title')
+            ->addIdentifier('title')
+            ->add('draft')
             ->add('body')
-            ->add('draft');
+            ->add('category.name');
 
     }
 
     protected  function configureDatagridFilters(DatagridMapper $datagridMapper){
-        $datagridMapper->add('title');
-        $datagridMapper->add('body');
-        $datagridMapper->add('draft');
+        $datagridMapper
+            ->add('title')
+            ->add('body')
+            ->add('draft')
+            ->add('category', null, array(), 'entity', array(
+                'class'    => 'AppBundle\Entity\Category',
+                'choice_label' => 'name',));
     }
 
     public function toString($object)
